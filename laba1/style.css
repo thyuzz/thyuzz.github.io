@@ -1,0 +1,138 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background: #f2f2f2;
+}
+
+header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background: #fff;
+}
+
+article {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: top;
+	background: #f2f2f2;
+	width: 590px;
+}
+
+#divzd {
+	float: left;
+}
+
+.zd:hover { background:  #92b800; 
+  color: #fff; }
+.zd:active {
+  background: #92b800;
+  color: #fff;
+  
+}
+.zd {
+	width: 240px;
+	font-weight: 700;
+	color: #000;
+	text-decoration: none;
+	padding: .8em 1em calc(.8em + 3px);
+	border-radius: 3px;
+	background: #f2f2f2;
+	transition: 0.2s;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	outline: none;
+}
+
+.pole {
+	width: 70%;
+	height: auto;
+}
+
+#main-menu {
+ float: right;
+ height: 83px;
+}
+
+#main-menu ul {
+ margin-top: 18px; /*необходимо добавить отступ сверху, чтобы прижать меню к
+нижнему блоку*/
+ overflow: hidden;
+ padding: 0;
+ margin-bottom: 0;
+}
+
+#main-menu ul li{
+ float: left;
+ list-style: none;
+ background: #f2f2f2; /*задаем серый цвет для всех элементов списка*/
+ padding: 24px 32px 21px 32px; /*добавляем внутренние отступы, как показано на
+рисунке Рисунок 7*/
+ margin-right: 1px;
+ /*Добавляем закругления на углах блока*/
+ border-top-left-radius: 20px;
+ border-top-right-radius: 20px;
+}
+
+#div1{
+	display: none;
+  
+}
+#div2{
+  display: none;
+}
+#div3{
+  display: none;
+}
+
+#main-menu a{
+	text-decoration: none;
+	color: #000;
+}
+
+#main-menu ul li:hover,
+#main-menu ul li.active-element {
+ background: #92b800;
+ color: #fff;
+ text-decoration: none;
+ transition: all .8s;
+}
+
+#main-menu a:hover,
+#main-menu a.active-element {
+ background: #92b800;
+ color: #fff;
+ text-decoration: none;
+ transition: all .8s;
+}
+
+div {
+	border: 1px;
+	border-color: #696969;
+	width: 255px;
+	margin: 20px;
+	background: #f2f2f2;
+}
+
+article a {
+	text-decoration: none;
+	color: #000;
+}
+
+article a:hover,
+article a.active-element {
+	background: #696969;
+	color: #fff;
+	text-decoration: none;
+	transition: all .5s;
+	padding: 8px 5px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}

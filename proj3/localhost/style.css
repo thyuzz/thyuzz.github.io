@@ -1,0 +1,53 @@
+@media screen { /* Стиль для отображения в браузере */
+    BODY {
+      font-family: Arial, Verdana,  sans-serif; /* Семейство шрифтов */
+      font-size: 11pt; /* Размер основного шрифта в пунктах  */
+      background-color: #A9A9A9; /* Цвет фона веб-страницы */
+      color: #333; /* Цвет основного текста */
+    }
+    H1 {
+      background: #D3D3D3; /* Цвет фона */
+      color: #483D8B; /* Цвет заголовка */
+      font-size: 24pt; /* Размер шрифта в пунктах */
+      font-family: Georgia, Times, serif; /* Семейство шрифтов */
+      font-weight: normal; /* Нормальное начертание текста  */
+      border: 2px dashed DarkSlateBlue; /* Рамка вокруг заголовка */
+      padding: 7px; /* Поля вокруг текста */
+    }
+    
+   }
+   @media print { /* Стиль для печати */
+    BODY {
+     font-family: Times, 'Times New Roman', serif; /* Шрифт с засечками */
+    }
+    H1, H2, P {
+     color: black; /* Чёрный цвет текста */
+    }
+   }
+   
+ .form-group {
+ position: relative;
+ padding-top: 1.5rem;
+} // для класса форм-групп который в хтмл
+
+label {
+ position: absolute;
+ top: 0;
+ font-size: var(--font-size-small);
+ opacity: 1;
+ transform: translateY(0);
+ transition: all 0.2s ease-out;
+}
+
+input:placeholder-shown + label {
+ opacity: 0;
+ transform: translateY(1rem);
+}
+
+input:required + .help-text::before {
+ content: '*Required';
+}
+
+input:optional + .help-text::before {
+ content: '*Optional';
+}

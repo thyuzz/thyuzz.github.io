@@ -1,0 +1,216 @@
+<html>
+	<head>
+		<title>Porfolio</title>
+	</head>
+	
+	<style>
+		#div1 {display: none; text-align: center; font-family: Times New Roman;
+			font-size: 18px;}
+		#div2 {display: none; text-align: center; font-family: Times New Roman;
+			font-size: 18px;}
+		body {min-width: 1024px;}
+		
+		#cont {
+			marginL 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			background-color: #f4f6ec;
+		}
+		
+		#btn {display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;}
+		
+		footer {background-color: #2d0c03; min-width: 1024px;}
+		footer p {font-family: arial;
+					font-size: 14px;
+					color: #ff1a4a;
+					text-align: center;}
+		
+		header {
+			background-color: #2d0c03;
+			min-width: 1024px;
+		}
+		
+		#content {
+			display: flex;
+			flex-direction: row;
+			justify-content: start-flex;
+			background-color: #f4f6ec;
+			min-width: 1024px;
+		}
+		
+		
+		#card {
+			width: 480px;
+		}
+		
+		#card p {
+			font-family: Times New Roman;
+			font-size: 18px;
+			color: #f8b786;
+		}
+		
+		#article1 {
+			display: flex;
+			flex-direction: row;
+			justify-content: left;
+			align-items: center;
+			background-color: #98514b;
+		}
+		
+		#d {min-width: 150px; background-color: #f8b786;}
+		
+		h1 {color: #ff1a4a;}
+		
+		#block_content {
+			min-width: 1020px;
+			border: 2px solid #2d0c03;
+			background-color: #f4f6ec;
+			align-items: center;
+		}
+		
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+		
+		a:hover {
+			text-decoration: none;
+			background: rgba(248, 184, 136, 0.5);
+			color: #2d0c03;
+			transition: all .5s;
+			padding: 8px 5px;
+			border-radius: 20%;
+		}
+		
+		a:active {
+			text-decoration: none;
+			background: rgba(248, 184, 136);
+			color: #2d0c03;
+			transition: all .5s;
+			padding: 8px 5px;
+			border-radius: 20%;
+		}
+		input {
+			outline: none;}
+		.zd{
+			width: 220px;
+		  display:inline-block;
+		  padding:15px 40px;
+		  border-radius:4px;
+		  box-shadow:2px 2px 2px rgba(0,0,0,0.5);
+		  background-color: #2d0c03;
+		  color:#ff1a4a;
+		  font-weight:600;
+		  text-transform:uppercase;
+		  cursor:pointer;
+		  margin:auto;
+		  text-decoration:none;
+		}
+		.ripple{
+		  position: relative;
+		  overflow:hidden;
+		}
+
+		.ripple-effect{
+		  display:inline-block;
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  height:0;
+		  width:0;
+		  border:2px solid rgba(255,255,255,0.3);
+		  border-radius:5000px;
+		  animation:ripple 1s ease forwards;
+		  z-index:1;
+		}
+		@keyframes ripple{
+		  0%{
+			transform:scale(0);
+		  }
+		  100%{
+			transform:scale(100);
+		  }
+		}
+		
+	</style>
+	
+	<body id = 'cont'>
+		<header>
+			<h1>Портфолио</h1>
+		</header>
+		
+		<main id = 'content'>
+			<div id = 'd'></div>
+			<article id = 'article1'>
+				<div id = 'd'></div>
+				<div>
+					<h2>Карточка<h2>
+					<img src = 'photo.png' width = '200' height = '200' alt = 'photo'/>
+					<div id = 'card'><p>Яковлева Татьяна</br> 
+							Студент третьего курса </br> 
+							Российского Государтсвенного</br> 
+							Социального Университета</br> 
+							Факультета Информационных Технологий</br> 
+							По направлении подготовки</br> 
+							"Информатика и вычислительная техника"</br>
+						</p>
+					</div> 
+				</div>
+			</article>
+			
+			<article id = 'buttons'>
+				<h2></h2>
+				<div id = 'btn'>
+					<input type = 'button' value = 'Проекты СПР' class = 'ripple zd' onmousedown = 'zs1()'/>
+					<input type = 'button' value = 'Проекты АвтСист' class = 'ripple zd' onmousedown = 'zs2()'/>
+				</div>
+			</article>
+		</main>
+		<article id = 'block_content'>
+				<div id = 'div1'>
+					<b>Список Проектов</b>
+					<p><a href="laba1/page1.html">Верстка</a></p>
+				</div>
+				<div id = 'div2'>
+					<b>Список Проектов</b>
+					<p><a href="proj1/Nord.html">Верстка</a></p>
+					<p><a href="proj2/index.html">Верстка</a></p>
+					<p><a href="proj3/localhost/analize.html">Проект</a></p>
+					<p><a href="proj4/maket.html">Верстка</a></p>
+				</div>
+		</article>
+		<footer>
+			<p>2018</p>
+		</footer>	
+	</body>
+	
+	<script language = "JavaScript">
+		function zs1() {
+			document.getElementById("div1").style.display = "block";
+			document.getElementById("div2").style.display = "none";
+		}
+		function zs2() {
+			document.getElementById("div2").style.display = "block";
+			document.getElementById("div1").style.display = "none";
+		}
+		
+		$(".ripple").on("click",function(event){
+			$(this).append("<span class='ripple-effect'>");
+			$(this).find(".ripple-effect").css({
+				left:event.pageX-$(this).position().left,
+				top:event.pageY-$(this).position().top
+			}).animate({
+				opacity: 0,
+			}, 1500, function() {
+				$(this).remove();
+			});
+		});
+
+	</script>
+	
+</html>

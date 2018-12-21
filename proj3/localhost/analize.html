@@ -1,0 +1,159 @@
+<html> 
+  <meta charset="utf-8"> 
+  <head> 
+    <h1 align = 'center'>Анализ Парка Техники</h1> 
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+  </head> 
+
+
+
+  <body>
+    <form action="bd.php" method="post"> 
+	  <fieldset>
+          <legend>Подразделение</legend> 
+
+          <div class="form-group">
+            <input type="text" id="filial" name="filial" placeholder="Введите филиал" required>
+            <label for="filial">Филиал</label>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="nazvanie" name="nazvanie" placeholder="Введите название"  required>
+            <label for="nazvanie">Название</label>
+            <span class="help-text"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="rod_podraz" name="rod_podraz" placeholder="Введите родительское подразделение" required>
+            <label for="rod_podraz">Родительское подразделение</label>
+            <span class="help-text"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="podraz_vis_yr" name="podraz_vis_yr" placeholder="Введите подразделение высшего уровня" required>
+            <label for="podraz_vis_yr">Подразделение высшего уровня</label>
+            <span class="help-text"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="chislo_sotrdn" name="chislo_sotrdn" placeholder="Введите число сотрудников" required>
+            <label for="chislo_sotrdn">Число сотрудников</label>
+            <span class="help-text"></span>
+          </div> 
+	    </fieldset> 
+     
+       <fieldset> 
+          <legend>Устройства</legend> 
+          <div class="form-group">
+            <input type="text" id="tip" name="tip" placeholder="Введите тип" required>
+            <label for="tip">Тип</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="model" name="model" placeholder="Введите модель"  required>
+            <label for="model">Модель</label>
+            <span class="help-text"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="god_priob" name="god_priob" placeholder="Введите год приобретения" required>
+            <label for="god_priob">Год приобретения</label>
+            <span class="help-text"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="terr" name="terr" placeholder="Введите территорию" required>
+            <label for="terr">Территория</label>
+            <span class="help-text"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="korpus" name="korpus" placeholder="Введите корпус" required>
+            <label for="korpus">Корпус</label>
+            <span class="help-text"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="komnata" name="komnata" placeholder="Введите комнату" required>
+            <label for="komnata">Комната</label>
+            <span class="help-text"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="chislo_sot_v_kom" name="chislo_sot_v_kom" placeholder="Введите число сотрудников в комнате" required>
+            <label for="chislo_sot_v_kom">Число сотрудников в комнате</label>
+            <span class="help-text"></span>
+          </div>
+      </fieldset> 
+	  <p><input type="submit" ></p> <br>
+    </form> 
+	
+	<h2>Подразделение</h2>
+		<table  border="1">
+			<tr>
+				<td>Филиал</td>
+				<td>Название</td>
+				<td>Родительское
+					подразделение</td>
+				<td>Подразделение
+					высшего
+					уровня</td>
+				<td>Число
+					сотрудников</td>
+			</tr>
+			<?php
+				include 'link.php';
+				$resultat = mysqli_query($link, "SELECT * FROM podrazdelenie", $link);
+				echo $resultat;
+				
+				while ($stroka = mysqli_fetch_array($resultat)){
+					echo"<tr>";
+						echo"<td>" . $stroka['filial'] . "</td>";
+						echo"<td>" . $stroka['nazvanie'] . "</td>";
+						echo"<td>" . $stroka['rod_podraz'] . "</td>";ёё--
+						ёё
+						echo"<td>" . $stroka['podraz_vis_yr'] . "</td>";
+						echo"<td>" . $stroka['chislo_sotrdn'] . "</td>";
+					echo"</tr>";
+				}
+			?>
+		</table>
+	
+		
+	<h2>Устройства</h2>
+		<table border="1">
+			<tr>
+				<td>Тип</td>
+				<td>Модель</td>
+				<td>Год
+					приобретения</td>
+				<td>Территория</td>
+				<td>Корпус</td>
+				<td>Комната</td>
+				<td>Число
+					сотрудников
+					в комнате</td>
+			</tr>
+			<?php
+				include 'link.php';
+				$rows = mysqli_query($link, $query); 
+				while ($stroka = mysqli_fetch_array($rows)){
+					echo"<tr>";
+						echo"<td>" . $stroka['tip'] . "</td>";
+						echo"<td>" . $stroka['model'] . "</td>";
+						echo"<td>" . $stroka['god_priob'] . "</td>";
+						echo"<td>" . $stroka['terr'] . "</td>";
+						echo"<td>" . $stroka['korpus'] . "</td>";
+						echo"<td>" . $stroka['komnata'] . "</td>";
+						echo"<td>" . $stroka['chislo_sot_v_kom'] . "</td>";
+					echo"</tr>";
+				}
+			?>
+		</table>
+	
+  </body> 
+	
+	
+	
+</html>
+
